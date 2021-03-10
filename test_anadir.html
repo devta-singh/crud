@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Document</title>
+	<script language="javascript" src="js/jquery.js"></script>
+	<!--<script language="javascript" src="js/edicion-agregar.js"></script>-->
+
+	<script language="javascript">
+		
+$(document).on('ready', funcPrincipal);
+
+function funcPrincipal()
+{
+	alert("saludos");
+	//$("#btnNuevoAlineamiento").on('click', "funcNuevoAlineamiento");
+	//console.log("Llamada a funcion principal");
+
+}
+
+function funcNuevoAlineamiento()
+{
+	alert("Hello");
+	//console.log("Llamada a funcion funcNuevoAlineamiento");
+	//$("#tablaAlineamiento")
+	//.append
+	//("<tr><td>hola</td><td>que</td><td>tal</td></tr>")
+}
+
+
+	</script>
+</head>
+<body>
+		<label for="alineamiento">
+			Estrategia de alineamiento 
+		<input type="button" class="btn btn-success" id="btnNuevoAlineamiento" value="Nuevo"/>
+		</label>
+		<table id="tablaAlineamiento">
+			<tr>
+				<td class="text-center">
+					Estrategia
+				</td>
+				<td class="text-center">
+					Alineamiento
+				</td>
+				<td class="text-center">
+					Opciones
+				</td>
+			</tr>
+		</table>
+</body>
+</html>

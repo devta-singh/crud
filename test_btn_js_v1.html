@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Test btn js v1</title>
+
+	<script language="javascript" src="js/jquery.js"></script>
+	<!--<script language="javascript" src="js/edicion-agregar.js"></script>-->
+
+	<script language="javascript">
+		
+$(document).on('ready', funcPrincipal);
+
+function funcPrincipal()
+{
+	//alert("saludos");
+
+	//$("#btnNuevoAlineamiento").on('click', "funcNuevoAlineamiento");
+	//console.log("Llamada a funcion principal");
+
+}
+
+	</script>
+</head>
+<body>
+		<label for="alineamiento">
+			Estrategia de alineamiento 
+		<input type="button" class="btn btn-success" id="btnNuevoAlineamiento" value="Nuevo" onClick="alert('Saludos1');$('#salida').append('Hola!')"/>
+		</label>
+		<div id="salida"></div>
+<!-- 		<table id="tablaAlineamiento">
+			<tr>
+				<td class="text-center">
+					Estrategia
+				</td>
+				<td class="text-center">
+					Alineamiento
+				</td>
+				<td class="text-center">
+					Opciones
+				</td>
+			</tr>
+		</table> 
+-->
+</body>
+</html>

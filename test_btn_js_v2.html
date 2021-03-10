@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Test btn js v2</title>
+
+	<style>
+		.div_botones{
+			display:inline;
+			border:solid 1px black;
+			padding:3px;
+			width:100px;
+		}
+	</style>
+
+	<script language="javascript" src="js/jquery.js"></script>
+	<!--<script language="javascript" src="js/edicion-agregar.js"></script>-->
+
+	<script language="javascript">
+		
+
+
+function funcPrincipal()
+{
+	//alert("saludos f2");
+
+	$("#btnNuevoAlineamiento").click(funcNuevoAlineamiento);
+	//console.log("Llamada a funcion principal");
+}
+
+function funcNuevoAlineamiento()
+{
+	//console.log("Llamada a funcion funcNuevoAlineamiento");
+	//$('#salida').html('Hola! 3');	// cambiamos el texto de la información
+	$('#salida') // $("#tablaAlineamiento")
+	.append
+	(
+		$('<tr>')
+		.append
+		(
+			$('<td>')
+			.append
+			(
+				$('<input>').attr('type', 'text').addClass('form-control')
+			)
+		)
+
+		.append
+		(
+			$('<td>')
+			.append
+			(
+				$('<input>').attr('type', 'text').addClass('form-control')
+			)
+		)
+
+		.append
+		(
+			$('<td>').addClass('text-center')
+			.append
+			(		
+				$('<div>').addClass('div_botones')
+			)
+			.append
+			(		
+				$('<div>').addClass('btn btn-primary').text('Guardar')
+			)
+			.append
+			(		
+				$('<div>').addClass('btn btn-danger').text('Eliminar')
+			)
+		)
+	);
+}
+
+//esta linea se ejecuta cuando la carga del documento está completa
+//y llama a la función funcPrincipal
+$(document).ready(funcPrincipal);
+
+	</script>
+</head>
+<body>
+		
+		<label for="alineamiento">
+			Estrategia de alineamiento 
+		<input type="button" class="btn btn-success" id="btnNuevoAlineamiento" value="Nuevo"/>
+		</label>
+		<div id="salida"></div>
+<!-- 		<table id="tablaAlineamiento">
+			<tr>
+				<td class="text-center">
+					Estrategia
+				</td>
+				<td class="text-center">
+					Alineamiento
+				</td>
+				<td class="text-center">
+					Opciones
+				</td>
+			</tr>
+		</table> 
+-->
+</body>
+</html>

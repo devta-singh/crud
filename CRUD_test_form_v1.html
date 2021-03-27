@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Document</title>
+
+
+<script src="js/jquery.js"></script>
+<script>
+    // Add products to <table>
+    function nuevo_producto() {
+        // First check if a <tbody> tag exists, add one if not
+        if ($("#productTable tbody").length == 0) {
+            $("#productTable").append("<tbody></tbody>");
+        }
+        
+        // Append product to the table
+        $("#productTable tbody").append("<tr>" +
+        	"<td>editar</td>" +
+            "<td>Extending Bootstrap with CSS, JavaScript and jQuery</td>" +
+            "<td>6/11/2015</td>" +
+            "<td>http://bit.ly/1SNzc0i</td>" +
+            "<td>borrar</td>" +
+            "</tr>");
+            
+        $("#productTable tbody").append("<tr>" +
+        	"<td>editar</td>" +
+            "<td>Build your own Bootstrap Business Application Template in MVC</td>" +
+            "<td>1/29/2015</td>" +
+            "<td>http://bit.ly/1I8ZqZg</td>" +
+            "<td>borrar</td>" +
+            "</tr>");
+	}
+
+	function anadir_producto(nombre='', fecha='', url=''){
+    	//si la tabla está vacía (no tiene tbody, lo creamos)
+    	if ($("#productTable tbody").length == 0) {
+            $("#productTable").append("<tbody></tbody>");
+        }
+
+        $("#productTable tbody").append("<tr>" +
+        	"<td>editar</td>" +
+            "<td>"+ nombre +"</td>" +
+            "<td>"+ fecha +"</td>" +
+            "<td>"+ url +"</td>" +
+            "<td>borrar</td>" +
+            "</tr>");
+
+	}
+
+	function grabar_nuevo_producto(){
+		var nombre='';
+		var fecha='';
+		var url='';
+
+		nombre = $('#campo_nombre').val();
+		fecha = $('#campo_fecha').val();
+		url = $('#campo_url').val();
+		
+		//alert('nombre: '+nombre+' / fecha: '+fecha+' / URL: '+url);
+
+		anadir_producto(nombre, fecha, url);
+
+		var chk_bbdd;
+		chk_bbdd = $('#chk_bbdd').checked().val();
+		alert('chk_bbdd: '+chk_bbdd);
+		alert('Ya llegamos');
+		//if(){
+
+		//}
+	}
+</script>
+
+</head>
+<body>
+	<div class="container">
+	    <div class="row">
+	        <div class="col-sm-6">
+	            <h2>List Products</h2>
+	        </div>
+	    </div>
+	    <div class="row">
+	        <div class="col-sm-6">
+	        	<!--
+	        	<input type="button" id="btn-grabar" value="Anadir" onclick="anadir_producto();"/>
+	        	-->
+	            <table id="productTable" class="table table-bordered table-condensed table-striped">
+	                <thead>
+	                    <tr>
+	                    	<th></th>
+	                        <th>Nombre</th>
+	                        <th>Fecha</th>
+	                        <th>URL</th>
+	                        <th></th>
+	                    </tr>
+	                </thead>
+	            </table>
+	        </div>
+	    </div>
+	    <div id="div_form">
+	    	<form action="?" method="post">
+	    		<input type="text" name="nombre" id="campo_nombre" value="Nombre" title="Nombre" onclick="this.select();"/><br/>
+	    		<input type="date" name="fecha" id="campo_fecha" value="Fecha" title="Fecha" onclick="this.select();"/><br/>
+	    		<input type="url" name="url" id="campo_url" value="URL" title="URL" onclick="this.select();"/><br/>
+	    		<input type="button" id="btn-grabar" value="Grabar" onclick="grabar_nuevo_producto();"/>
+	    		<input type="checkbox" id="chk_bbdd" value="1" checked onclick="grabar_nuevo_producto();"/> Guardar en la BBDD
+	    	</form>
+	    </div>
+	</div>
+</body>
+</html>
